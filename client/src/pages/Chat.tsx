@@ -17,7 +17,14 @@ import {
   ArrowLeft,
   Square,
   MessageCircle,
+  MoreVertical,
 } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { storagePut } from "../lib/storage";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -326,31 +333,6 @@ export default function Chat() {
         </div>
       )}
 
-      {/* ── Mobile Bottom Nav ── */}
-      <nav className="fixed bottom-0 left-0 right-0 z-30 lg:hidden border-t border-border/40 bg-card/90 backdrop-blur-sm flex items-center justify-around px-2 py-2" style={{paddingBottom: 'env(safe-area-inset-bottom)'}}>
-        <button
-          onClick={() => navigate("/chat")}
-          className="flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-lg text-primary"
-        >
-          <MessageCircle className="w-5 h-5" />
-          <span className="text-[10px] font-medium">চ্যাট</span>
-        </button>
-        <button
-          onClick={() => navigate("/train")}
-          className="flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-lg text-muted-foreground hover:text-foreground"
-        >
-          <Brain className="w-5 h-5" />
-          <span className="text-[10px] font-medium">ট্রেইন</span>
-        </button>
-        <button
-          onClick={() => navigate("/settings")}
-          className="flex flex-col items-center gap-0.5 px-4 py-1.5 rounded-lg text-muted-foreground hover:text-foreground"
-        >
-          <Settings className="w-5 h-5" />
-          <span className="text-[10px] font-medium">সেটিংস</span>
-        </button>
-      </nav>
-
       {/* ── Main Chat Area ── */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Header */}
@@ -378,23 +360,28 @@ export default function Chat() {
             </div>
           </div>
           <div className="ml-auto flex items-center gap-2">
-            <button
-              onClick={() => navigate("/train")}
-              className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50"
-            >
-              <Brain className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => navigate("/settings")}
-              className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50"
-            >
-              <Settings className="w-4 h-4" />
-            </button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button className="lg:hidden p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted/50">
+                  <MoreVertical className="w-4 h-4" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-40">
+                <DropdownMenuItem onClick={() => navigate("/train")}>
+                  <Brain className="w-4 h-4 mr-2" />
+                  <span>ট্রেইনিং</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => navigate("/settings")}>
+                  <Settings className="w-4 h-4 mr-2" />
+                  <span>সেটিংস</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
         </header>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 pb-20 lg:pb-4">
+        <div className="flex-1 overflow-y-auto px-4 py-4 space-y-4 pb-4">
           {messages.length === 0 && !historyQuery.isLoading && (
             <div className="flex flex-col items-center justify-center h-full text-center py-16">
               <div className="text-5xl mb-4 float-anim">💕</div>
@@ -414,7 +401,7 @@ export default function Chat() {
         </div>
 
         {/* Input Area */}
-        <div className="p-3 sm:p-4 border-t border-border/40 bg-card/30 backdrop-blur-sm pb-[calc(0.75rem+env(safe-area-inset-bottom))] lg:pb-4">
+        <div className="p-3 sm:p-4 border-t border-border/40 bg-card/30 backdrop-blur-sm">
           <div className="flex items-end gap-2 max-w-4xl mx-auto">
             {/* Voice button */}
             <button

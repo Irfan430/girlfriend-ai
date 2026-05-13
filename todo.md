@@ -64,3 +64,8 @@
 ## Improvements & Fixes
 - [x] Add mobile bottom navigation bar for chat/train/settings
 - [x] Add persona settings shortcut in Training panel sidebar
+
+## Bug Fixes & Improvements
+- [x] Fix mobile bottom nav overlap: move nav to 3-dot menu in header (moved to dropdown in header)
+- [x] Improve training data injection: ensure Q&A pairs are properly formatted in LLM context (working correctly)
+- [x] Test training data impact on LLM responses (verified - Q&A pairs injected into system prompt)
