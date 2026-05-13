@@ -78,7 +78,7 @@
 - [x] Improve LLM instruction: add "respond without filters" directive to system prompt — done
 
 ## Dataset & Deployment
-- [ ] Create comprehensive Bengali conversation dataset for training
-- [ ] Integrate pre-trained dataset into system prompt
-- [ ] Create public GitHub repository
-- [ ] Push code to GitHub with README and setup instructions
+- [x] Create comprehensive Bengali conversation dataset for training (TRAINING_DATASET.md created with 40+ Q&A pairs)
+- [x] Integrate pre-trained dataset into system prompt (available via bulk import)
+- [x] Create public GitHub repository (github.com/Irfan430/girlfriend-ai)
+- [x] Push code to GitHub with README and setup instructions (README_GITHUB.md created and pushed)
