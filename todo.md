@@ -75,6 +75,9 @@
 - [x] Add system prompt customization: allow users to set custom system instructions — persona customization in Settings
 - [x] Remove safety filters: ensure unsensored responses for private use — added "no censorship" directive to system prompt
 - [ ] Add training data categories: organize Q&A by topics/moods (optional: future enhancement for better organization)
+
+## Completed ✅
+All core features implemented and deployed to GitHub!
 - [x] Improve LLM instruction: add "respond without filters" directive to system prompt — done
 
 ## Dataset & Deployment
