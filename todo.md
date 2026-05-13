@@ -74,5 +74,11 @@
 - [x] Increase training data limit: support bulk Q&A import (CSV/JSON) — bulk import feature added to Train page
 - [x] Add system prompt customization: allow users to set custom system instructions — persona customization in Settings
 - [x] Remove safety filters: ensure unsensored responses for private use — added "no censorship" directive to system prompt
-- [ ] Add training data categories: organize Q&A by topics/moods (future enhancement)
+- [ ] Add training data categories: organize Q&A by topics/moods (optional: future enhancement for better organization)
 - [x] Improve LLM instruction: add "respond without filters" directive to system prompt — done
+
+## Dataset & Deployment
+- [ ] Create comprehensive Bengali conversation dataset for training
+- [ ] Integrate pre-trained dataset into system prompt
+- [ ] Create public GitHub repository
+- [ ] Push code to GitHub with README and setup instructions
