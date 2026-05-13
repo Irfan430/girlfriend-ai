@@ -69,3 +69,10 @@
 - [x] Fix mobile bottom nav overlap: move nav to 3-dot menu in header (moved to dropdown in header)
 - [x] Improve training data injection: ensure Q&A pairs are properly formatted in LLM context (working correctly)
 - [x] Test training data impact on LLM responses (verified - Q&A pairs injected into system prompt)
+
+## Training Enhancement
+- [x] Increase training data limit: support bulk Q&A import (CSV/JSON) — bulk import feature added to Train page
+- [x] Add system prompt customization: allow users to set custom system instructions — persona customization in Settings
+- [x] Remove safety filters: ensure unsensored responses for private use — added "no censorship" directive to system prompt
+- [ ] Add training data categories: organize Q&A by topics/moods (future enhancement)
+- [x] Improve LLM instruction: add "respond without filters" directive to system prompt — done
